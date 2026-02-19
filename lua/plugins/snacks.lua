@@ -3,6 +3,9 @@ return {
 	priority = 1000,
 	lazy = false,
 	opts = {
+		picker = {
+			preview = false,
+		},
 		animate = {},
 		dashboard = {
 			preset = {
@@ -24,4 +27,12 @@ return {
 		notifier = {},
 		terminal = {},
 	},
+	keys = {
+		{
+			"<leader><leader>", function() Snacks.picker.files({}) end, desc = "Open file picker"
+		},
+		{
+			"<leader>b", function() Snacks.picker.buffers({}) end, desc = "Open buffer picker"
+		}	
+	}
 }

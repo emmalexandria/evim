@@ -4,3 +4,5 @@ require("config.autocmd")
 
 vim.cmd("colorscheme neverglade")
 
+vim.lsp.enable("jdtls")
+

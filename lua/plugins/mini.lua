@@ -5,17 +5,6 @@ return {
 		opts = {},
 	},
 	{
-		"nvim-mini/mini.pick",
-		version = false,
-		opts = {},
-		keys = {
-			{
-				"<leader><leader>",
-				"<cmd>:lua MiniPick.builtin.files({tool = rg})<cr>",
-			},
-		},
-	},
-	{
 		"nvim-mini/mini.files",
 		version = false,
 		dependencies = {
@@ -23,7 +12,7 @@ return {
 		},
 		opts = {},
 		keys = {
-			{ "<leader>e", "<cmd>:lua MiniFiles.open()<cr>" },
+			{ "<leader>e", "<cmd>:lua MiniFiles.open()<cr>", desc = "Open file explorer" },
 		},
 	},
 	{

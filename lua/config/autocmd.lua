@@ -35,3 +35,23 @@ vim.api.nvim_create_autocmd("ModeChanged", {
 	end,
 	desc = "Set relative numbering in Visual block mode",
 })
+
+vim.api.nvim_create_autocmd("VimEnter", {
+	pattern = "*",
+	callback = function()
+		pid = os.getenv("KITTY_PID")
+		port = "unix:/tmp/kittyrc-" .. pid 
+		vim.fn.system("kitty @ --to " .. port .. " set-spacing padding=0")
+	end,
+	desc = "Disable Kitty padding on VimEnter"
+})
+
+vim.api.nvim_create_autocmd("VimLeave", {
+	pattern = "*",
+	callback = function()
+		pid = os.getenv("KITTY_PID")
+		port = "unix:/tmp/kittyrc-" .. pid 
+		vim.fn.system("kitty @ --to " .. port .. " set-spacing padding=16")
+	end	,
+	desc = "Disable Kitty padding on VimEnter"
+})
