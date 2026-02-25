@@ -1,7 +1,7 @@
 return {
 	{
 		"neverglade/nvim",
-		name = "neverglade",
+			name = "neverglade",
 		opts = {
 			scheme = "oak",
 		},
